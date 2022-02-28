@@ -14,4 +14,8 @@ export let HeaderText = styled.h1`
     color: #FFF;
 `;
 
-export let Body = styled.div``;
+export let Body = styled.div`
+    margin: auto;
+    max-width: 980px;
+    margin-bottom: 50px;
+`;
