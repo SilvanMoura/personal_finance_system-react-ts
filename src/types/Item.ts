@@ -1,5 +1,3 @@
-export {Item} from '../types/Item'
-
 export type Item = {
     date: Date,
     category: string,
