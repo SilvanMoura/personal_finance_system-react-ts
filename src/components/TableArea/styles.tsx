@@ -10,7 +10,7 @@ export let Table = styled.table`
 `;
 
 export let TableHeadColumn = styled.th<{width?:number}>`
-    width: ${props => props.width ? `${props.width}px` : 'auto'};
+    width: ${props => props.width ? `${props.width}px` : '500px'};
     padding: 10px 0;
     text-align: left;
 `;

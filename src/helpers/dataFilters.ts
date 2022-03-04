@@ -19,3 +19,13 @@ export let filterListByMonth = (list: Item[], date:string): Item[] =>{
     }
     return newList;
 };
+
+export let formatDate = (date: Date): string =>{
+    let year = date.getFullYear();
+    let month = date.getMonth() + 1;
+    let day = date. getDate();
+
+    return `${day}/${month}/${year}`;
+};
+
+let addZeroToDate = (n:number): string => n < 10 ? `0${n}` : `${n}`;
