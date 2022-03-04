@@ -5,7 +5,9 @@ import {Category} from './types/Category';
 import {categories} from './data/categories';
 import {items} from './data/items';
 import {getCurrentMonth, filterListByMonth} from './helpers/dataFilters'
-import {TableArea} from './components/TableArea/index'
+import {TableArea} from './components/TableArea/index';
+import {InfoArea} from './components/InfoArea/index';
+
 
 let App = ()=>{
   let [list, setList] = useState(items);
@@ -24,6 +26,7 @@ let App = ()=>{
       </C.Header>
 
       <C.Body>
+        <InfoArea></InfoArea>
         <TableArea list={filteredList} />
       </C.Body>
 
