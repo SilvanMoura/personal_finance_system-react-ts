@@ -26,7 +26,7 @@ let App = ()=>{
       </C.Header>
 
       <C.Body>
-        <InfoArea></InfoArea>
+        <InfoArea currentMonth={currentMonth}></InfoArea>
         <TableArea list={filteredList} />
       </C.Body>
 
