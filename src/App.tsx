@@ -18,6 +18,10 @@ let App = ()=>{
     setFilteredList( filterListByMonth( list, currentMonth) )
   }, [list, currentMonth])
 
+  let handleMonthChange = (newMonth: string) =>{
+    setCurrentMonth(newMonth);
+  }
+
   return(
     <C.Container>
       
@@ -26,7 +30,7 @@ let App = ()=>{
       </C.Header>
 
       <C.Body>
-        <InfoArea currentMonth={currentMonth}></InfoArea>
+        <InfoArea currentMonth={currentMonth} onMonthChange={handleMonthChange} ></InfoArea>
         <TableArea list={filteredList} />
       </C.Body>
 
