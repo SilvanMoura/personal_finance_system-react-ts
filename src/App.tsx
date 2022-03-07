@@ -13,7 +13,9 @@ let App = ()=>{
   let [list, setList] = useState(items);
   let [filteredList, setFilteredList] = useState<Item[]>([])
   let [currentMonth, setCurrentMonth] = useState(getCurrentMonth());
-  
+  let [income, setIncome] = useState(0);
+  let [expense, setExpense] = useState(0);
+
   useEffect(()=>{
     setFilteredList( filterListByMonth( list, currentMonth) )
   }, [list, currentMonth])
@@ -30,7 +32,12 @@ let App = ()=>{
       </C.Header>
 
       <C.Body>
-        <InfoArea currentMonth={currentMonth} onMonthChange={handleMonthChange} ></InfoArea>
+        <InfoArea 
+          currentMonth={currentMonth} 
+          onMonthChange={handleMonthChange}
+          income={income}
+          expense={expense}
+        ></InfoArea>
         <TableArea list={filteredList} />
       </C.Body>
 
