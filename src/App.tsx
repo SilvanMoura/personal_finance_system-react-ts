@@ -7,6 +7,7 @@ import {items} from './data/items';
 import {getCurrentMonth, filterListByMonth} from './helpers/dataFilters'
 import {TableArea} from './components/TableArea/index';
 import {InfoArea} from './components/InfoArea/index';
+import {InputArea} from './components/InputArea/index';
 
 
 let App = ()=>{
@@ -55,6 +56,9 @@ let App = ()=>{
           income={income}
           expense={expense}
         ></InfoArea>
+
+        <InputArea></InputArea>
+
         <TableArea list={filteredList} />
       </C.Body>
 
