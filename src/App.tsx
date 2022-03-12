@@ -20,6 +20,23 @@ let App = ()=>{
     setFilteredList( filterListByMonth( list, currentMonth) )
   }, [list, currentMonth])
 
+  useEffect(()=>{
+    let incomeCount = 0;
+    let expense = 0;
+
+    for(let i in filteredList){
+      if(categories[filteredList[i].category].expense){
+        expense += filteredList[i].value;
+      } else{
+        incomeCount += filteredList[i].value;
+      }
+    }
+
+    setIncome(incomeCount);
+    setExpense(expense);
+  }, [filteredList])
+
+
   let handleMonthChange = (newMonth: string) =>{
     setCurrentMonth(newMonth);
   }

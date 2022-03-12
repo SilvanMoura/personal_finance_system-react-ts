@@ -1,7 +1,16 @@
 import * as C from './styles';
 
-export let ResumeItem = () =>{
-    return(
+type Props = {
+    title: string;
+    value: number;
+    color?: string;
+};
 
+export let ResumeItem = ({title, value, color}: Props) =>{
+    return(
+        <C.Container>
+            <C.Title>{title}</C.Title>
+            <C.Info color={color}>R$ {value}</C.Info>
+        </C.Container>
     );
 };
