@@ -1,14 +1,14 @@
-import { Item } from '../../types/Item';
 import * as C from './styles';
-import {formatDate} from '../../helpers/dataFilters';
-import {categories} from '../../data/categories';
+import { Item } from '../../types/Item';
+import { formatDate } from '../../helpers/dataFilters';
+import { categories } from '../../data/categories';
 
 type Props = {
     item: Item
 }
 
-export let TableItem = ({item}:Props)=>{
-    return(
+export const TableItem = ({ item }: Props) => {
+    return (
         <C.TableLine>
             <C.TableColumn>{formatDate(item.date)}</C.TableColumn>
             <C.TableColumn>
@@ -18,10 +18,10 @@ export let TableItem = ({item}:Props)=>{
             </C.TableColumn>
             <C.TableColumn>{item.title}</C.TableColumn>
             <C.TableColumn>
-                <C.Value color={categories[item.category].expense ? 'green' : 'red'}>
+                <C.Value color={categories[item.category].expense ? 'red' : 'green'}>
                     R$ {item.value}
                 </C.Value>
             </C.TableColumn>
         </C.TableLine>
     );
-};
+}

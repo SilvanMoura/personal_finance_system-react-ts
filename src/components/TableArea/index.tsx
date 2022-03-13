@@ -1,13 +1,13 @@
 import * as C from './styles';
-import {Item} from '../../types/Item';
-import {TableItem} from '../../components/TableItem/index'
+import { Item } from '../../types/Item';
+import { TableItem } from '../TableItem';
 
 type Props = {
     list: Item[]
-};
+}
 
-export let TableArea = ({list}:Props)=>{
-    return(
+export const TableArea = ({ list }: Props) => {
+    return (
         <C.Table>
             <thead>
                 <tr>
@@ -24,4 +24,4 @@ export let TableArea = ({list}:Props)=>{
             </tbody>
         </C.Table>
     );
-};
+}

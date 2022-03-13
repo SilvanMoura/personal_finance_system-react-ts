@@ -25,7 +25,7 @@ export let formatDate = (date: Date): string =>{
     let month = date.getMonth() + 1;
     let day = date. getDate();
 
-    return `${day}/${month}/${year}`;
+    return `${addZeroToDate(day)}/${addZeroToDate(month)}/${year}`;
 };
 
 let addZeroToDate = (n:number): string => n < 10 ? `0${n}` : `${n}`;
@@ -46,5 +46,5 @@ export let formatCurrentMonth = (currentMonth: string): string =>{
         'Novembro', 
         'Dezembro'
     ];
-    return `${months[parseInt(month) - 1]} des ${year}`;
+    return `${months[parseInt(month) - 1]} de ${year}`;
 };

@@ -40,7 +40,13 @@ let App = ()=>{
 
   let handleMonthChange = (newMonth: string) =>{
     setCurrentMonth(newMonth);
-  }
+  };
+
+  let handleAddItem = (newItem: Item) =>{
+    let newList = [...list];
+    newList.push(newItem);
+    setList(newList);
+  };
 
   return(
     <C.Container>
@@ -57,7 +63,7 @@ let App = ()=>{
           expense={expense}
         ></InfoArea>
 
-        <InputArea></InputArea>
+        <InputArea onAdd={handleAddItem} />
 
         <TableArea list={filteredList} />
       </C.Body>

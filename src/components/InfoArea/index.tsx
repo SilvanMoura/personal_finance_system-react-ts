@@ -1,6 +1,6 @@
 import * as C from './styles';
 import { formatCurrentMonth } from '../../helpers/dataFilters';
-import {ResumeItem} from '../ResumeItem/index';
+import { ResumeItem } from '../ResumeItem';
 
 type Props = {
     currentMonth: string;
@@ -9,40 +9,38 @@ type Props = {
     expense: number;
 }
 
-export let InfoArea = ({currentMonth, onMonthChange, income, expense}: Props) =>{
-    let handlePrevMonth = ()=>{
+export const InfoArea = ({ currentMonth, onMonthChange, income, expense }: Props) => {
+    
+    const handlePrevMonth = () => {
         let [year, month] = currentMonth.split('-');
         let currentDate = new Date(parseInt(year), parseInt(month) - 1, 1);
-        currentDate.setMonth( currentDate.getMonth() - 1);
+        currentDate.setMonth( currentDate.getMonth() - 1 );
         onMonthChange(`${currentDate.getFullYear()}-${currentDate.getMonth() + 1}`);
     }
 
-    let handleNextMonth = ()=>{
+    const handleNextMonth = () => {
         let [year, month] = currentMonth.split('-');
         let currentDate = new Date(parseInt(year), parseInt(month) - 1, 1);
-        currentDate.setMonth( currentDate.getMonth() + 1);
+        currentDate.setMonth( currentDate.getMonth() + 1 );
         onMonthChange(`${currentDate.getFullYear()}-${currentDate.getMonth() + 1}`);
     }
 
-    return(
+    return (
         <C.Container>
-            
             <C.MonthArea>
-                <C.MonthArrow onClick={handlePrevMonth}>⬅</C.MonthArrow>
+                <C.MonthArrow onClick={handlePrevMonth}>⬅️</C.MonthArrow>
                 <C.MonthTitle>{formatCurrentMonth(currentMonth)}</C.MonthTitle>
-                <C.MonthArrow onClick={handleNextMonth}>➡</C.MonthArrow>
+                <C.MonthArrow onClick={handleNextMonth}>➡️</C.MonthArrow>
             </C.MonthArea>
-
             <C.ResumeArea>
                 <ResumeItem title="Receitas" value={income} />
                 <ResumeItem title="Despesas" value={expense} />
-                <ResumeItem 
-                    title="Balanço" 
+                <ResumeItem
+                    title="Balanço"
                     value={income - expense}
-                    color={(income - expense) < 0 ? 'red' : 'green'}
+                    color={(income-expense) < 0 ? 'red' : 'green'}
                 />
             </C.ResumeArea>
-
         </C.Container>
     );
 }
