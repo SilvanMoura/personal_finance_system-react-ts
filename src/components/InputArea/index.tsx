@@ -54,10 +54,12 @@ export const InputArea = ({ onAdd }: Props) => {
 
   return (
       <C.Container>
+
         <C.InputLabel>
           <C.InputTitle>Data</C.InputTitle>
           <C.Input type="date" value={dateField} onChange={e => setDateField(e.target.value)} />
         </C.InputLabel>
+
         <C.InputLabel>
           <C.InputTitle>Categoria</C.InputTitle>
           <C.Select value={categoryField} onChange={e => setCategoryField(e.target.value)}>
@@ -69,18 +71,22 @@ export const InputArea = ({ onAdd }: Props) => {
             </>
           </C.Select>
         </C.InputLabel>
+
         <C.InputLabel>
           <C.InputTitle>Título</C.InputTitle>
-          <C.Input type="text" value={titleField} onChange={e => setTitleField(e.target.value)} />
+          <C.Input type="text" placeholder="Digite aqui o título" value={titleField} onChange={e => setTitleField(e.target.value)} />
         </C.InputLabel>
+
         <C.InputLabel>
           <C.InputTitle>Valor</C.InputTitle>
           <C.Input type="number" value={valueField} onChange={e => setValueField(parseFloat(e.target.value))} />
         </C.InputLabel>
+
         <C.InputLabel>
           <C.InputTitle>&nbsp;</C.InputTitle>
           <C.Button onClick={handleAddEvent}>Adicionar</C.Button>
         </C.InputLabel>
+        
       </C.Container>
   );
 }
